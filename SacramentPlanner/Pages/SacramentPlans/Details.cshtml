@@ -1,0 +1,67 @@
+﻿@page
+@model SacramentPlanner.Pages.SacramentPlans.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SacramentPlan</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SacramentPlan.Date)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SacramentPlan.Date)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SacramentPlan.Conducting)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SacramentPlan.Conducting)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SacramentPlan.OpeningHymn)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SacramentPlan.OpeningHymn)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SacramentPlan.Invocation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SacramentPlan.Invocation)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SacramentPlan.SacramentHymn)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SacramentPlan.SacramentHymn)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SacramentPlan.IntermediateHymn)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SacramentPlan.IntermediateHymn)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SacramentPlan.ClosingHymn)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SacramentPlan.ClosingHymn)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SacramentPlan.Benediction)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SacramentPlan.Benediction)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.SacramentPlan.SacramentPlanID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

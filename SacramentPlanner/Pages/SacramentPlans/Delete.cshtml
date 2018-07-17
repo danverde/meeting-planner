@@ -1,0 +1,70 @@
+﻿@page
+@model SacramentPlanner.Pages.SacramentPlans.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>SacramentPlan</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SacramentPlan.Date)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SacramentPlan.Date)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SacramentPlan.Conducting)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SacramentPlan.Conducting)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SacramentPlan.OpeningHymn)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SacramentPlan.OpeningHymn)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SacramentPlan.Invocation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SacramentPlan.Invocation)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SacramentPlan.SacramentHymn)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SacramentPlan.SacramentHymn)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SacramentPlan.IntermediateHymn)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SacramentPlan.IntermediateHymn)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SacramentPlan.ClosingHymn)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SacramentPlan.ClosingHymn)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SacramentPlan.Benediction)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SacramentPlan.Benediction)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="SacramentPlan.SacramentPlanID" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>
