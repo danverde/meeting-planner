@@ -26,7 +26,6 @@ namespace SacramentPlanner
                 try
                 {
                     var context = services.GetRequiredService<SacramentContext>();
-                    // context.Database.EnsureCreated(); // creates a temp database if one doesn't already exist
 
                     DbInitializer.Initialize(context);
                 }
