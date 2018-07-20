@@ -41,38 +41,46 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.SacramentPlan) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Date)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Conducting)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.OpeningHymn)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Invocation)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SacramentHymn)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IntermediateHymn)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ClosingHymn)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Benediction)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.SacramentPlanID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.SacramentPlanID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.SacramentPlanID">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.SacramentPlan)
+        {
+            /* string selectedRow = "";
+            if (item.SacramentPlanID == Model.SpeakerID)
+            {
+                selectedRow = "success";
+            } 
+            <tr class="@selectedRow"> */
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Conducting)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OpeningHymn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Invocation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SacramentHymn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IntermediateHymn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ClosingHymn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Benediction)
+                </td>
+                <td>
+                    <a asp-page="./Index" asp-route-id="@item.SacramentPlanID">Select</a> |
+                    <a asp-page="./Edit" asp-route-id="@item.SacramentPlanID">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.SacramentPlanID">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.SacramentPlanID">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

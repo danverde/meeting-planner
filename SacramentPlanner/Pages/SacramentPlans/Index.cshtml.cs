@@ -20,7 +20,7 @@ namespace SacramentPlanner.Pages.SacramentPlans
 
         public IList<SacramentPlan> SacramentPlan { get;set; }
 
-        public async Task OnGetAsync()
+        public async Task OnGetAsync(int? id, int? speakerID)
         {
             SacramentPlan = await _context.SacramentPlan.ToListAsync();
         }

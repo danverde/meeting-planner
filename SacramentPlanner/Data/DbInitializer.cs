@@ -32,15 +32,41 @@ namespace SacramentPlanner.Data
 
             var speakers = new Speaker[]
             {
-                new Speaker { SacramentPlanID = plans.Single(c => c.Date == DateTime.Parse("2018-09-12")).SacramentPlanID, Name = "Brother Smith", Topic = "Charity"},
-                new Speaker { SacramentPlanID = plans.Single(c => c.Date == DateTime.Parse("2018-09-12")).SacramentPlanID, Name = "Sister Smith", Topic = "Charity"},
-                new Speaker { SacramentPlanID = plans.Single(c => c.Date == DateTime.Parse("2018-09-19")).SacramentPlanID, Name = "Sister Blue", Topic = "Faith"},
-                new Speaker { SacramentPlanID = plans.Single(c => c.Date == DateTime.Parse("2018-09-19")).SacramentPlanID, Name = "Brother Jones", Topic = "Baptism"}
+                new Speaker { Name = "Brother Smith", Topic = "Charity"},
+                new Speaker { Name = "Sister Smith", Topic = "Charity"},
+                new Speaker { Name = "Sister Blue", Topic = "Faith"},
+                new Speaker { Name = "Brother Jones", Topic = "Baptism"}
             };
 
             foreach (Speaker s in speakers)
             {
                 context.Speaker.Add(s);
+            }
+            context.SaveChanges();
+
+            var SacramentPlanSpeakers = new SpeakerAssignment[]
+            {
+                new SpeakerAssignment {
+                SacramentPlanID = 1,
+                SpeakerID = 1
+                },
+                new SpeakerAssignment {
+                SacramentPlanID = 1,
+                SpeakerID = 2
+                },
+                new SpeakerAssignment {
+                SacramentPlanID = 2,
+                SpeakerID = 3
+                },
+                new SpeakerAssignment {
+                SacramentPlanID = 3,
+                SpeakerID = 4
+                },
+            };
+
+            foreach (SpeakerAssignment si in SacramentPlanSpeakers)
+            {
+                context.SpeakerAssignment.Add(si);
             }
             context.SaveChanges();
         }

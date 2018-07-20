@@ -9,7 +9,6 @@ namespace SacramentPlanner.Models
     public class Speaker
     {
         public int SpeakerID { get; set; }
-        public int SacramentPlanID { get; set; }
 
         [Required]
         [StringLength(80)]

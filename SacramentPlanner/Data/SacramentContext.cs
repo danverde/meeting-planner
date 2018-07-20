@@ -15,5 +15,6 @@ namespace SacramentPlanner.Models
 
         public DbSet<SacramentPlan> SacramentPlan { get; set; }
         public DbSet<Speaker> Speaker { get; set; }
+        public DbSet<SpeakerAssignment> SpeakerAssignment { get; set; }
     }
 }
