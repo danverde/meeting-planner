@@ -19,6 +19,8 @@ namespace SacramentPlanner.Pages.SacramentPlans
         }
 
         public SacramentPlan SacramentPlan { get; set; }
+        public IEnumerable<Speaker> Speakers { get; set; }
+        public int SacramentPlanID { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -27,12 +29,15 @@ namespace SacramentPlanner.Pages.SacramentPlans
                 return NotFound();
             }
 
+            SacramentPlanID = id.Value;
             SacramentPlan = await _context.SacramentPlan.FirstOrDefaultAsync(m => m.SacramentPlanID == id);
+            Speakers = _context.Speaker.Where(x => x.SacramentPlanID == SacramentPlanID);
 
             if (SacramentPlan == null)
             {
                 return NotFound();
             }
+
             return Page();
         }
     }

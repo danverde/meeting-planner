@@ -17,20 +17,20 @@ namespace SacramentPlanner.Models
         [Required, StringLength(60)]
         public string Conducting { get; set; }
 
-        [Required, StringLength(30)]
+        [Required, StringLength(30), Display(Name = "Opening Hymn")]
         public string OpeningHymn { get; set; }
 
         [Required, StringLength(80)]
         public string Invocation { get; set; }
 
-        [Required, StringLength(30)]
+        [Required, StringLength(30), Display(Name = "Sacrament Hymn")]
         public string SacramentHymn { get; set; }
 
         [StringLength(30)]
-        [DisplayFormat(NullDisplayText = "")] // I'm not sure this is the best way to do this...
+        [Display(Name = "Intermediate Hymn"), DisplayFormat(NullDisplayText = "")] // I'm not sure this is the best way to do this...
         public string IntermediateHymn { get; set; }
 
-        [Required, StringLength(30)]
+        [Required, StringLength(30), Display(Name = "Closing Hymn")]
         public string ClosingHymn { get; set; }
 
         [Required, StringLength(80)]

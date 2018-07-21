@@ -31,7 +31,6 @@ namespace SacramentPlanner.Pages.SacramentPlans
                 SacramentPlanID = id.Value;
 
                 Speakers = _context.Speaker.Where(x => x.SacramentPlanID == SacramentPlanID);
-                // Console.WriteLine(speakers);
             }
         }
     }

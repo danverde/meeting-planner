@@ -44,12 +44,26 @@
         <dd style="padding-bottom:20px">
             @Html.DisplayFor(model => model.SacramentPlan.SacramentHymn)
         </dd>
+        <p><b>Passing of the Sacrament</b></p>
+        
+        @if (Model.SacramentPlan.IntermediateHymn != null)
+        {
         <dt>
             @Html.DisplayNameFor(model => model.SacramentPlan.IntermediateHymn)
         </dt>
         <dd style="padding-bottom:20px">
             @Html.DisplayFor(model => model.SacramentPlan.IntermediateHymn)
         </dd>
+        }
+        <!-- Add speakers here! -->
+        @foreach(var speaker in Model.Speakers)
+        {
+            <dt>Speaker</dt>
+            <dd style="padding-bottom:20px;">
+                @speaker.Name
+            </dd>
+        }
+
         <dt>
             @Html.DisplayNameFor(model => model.SacramentPlan.ClosingHymn)
         </dt>
