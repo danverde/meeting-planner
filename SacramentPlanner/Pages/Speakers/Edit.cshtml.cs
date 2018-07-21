@@ -21,12 +21,18 @@ namespace SacramentPlanner.Pages.Speakers
 
         [BindProperty]
         public Speaker Speaker { get; set; }
+        public int SacramentPlanID { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync(int? id, int? sacramentPlanID)
         {
             if (id == null)
             {
                 return NotFound();
+            }
+
+            if (sacramentPlanID != null)
+            {
+                SacramentPlanID = sacramentPlanID.Value;
             }
 
             Speaker = await _context.Speaker.FirstOrDefaultAsync(m => m.SpeakerID == id);
@@ -63,7 +69,7 @@ namespace SacramentPlanner.Pages.Speakers
                 }
             }
 
-            return RedirectToPage("./Index");
+            return Redirect($"/SacramentPlans/Index?id={Speaker.SacramentPlanID}");
         }
 
         private bool SpeakerExists(int id)

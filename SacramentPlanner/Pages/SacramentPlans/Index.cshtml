@@ -104,7 +104,7 @@
                     @speaker.Topic
                 </td>
                 <td>
-                    <a asp-page="../Speakers/Edit" asp-route-id="@speaker.SpeakerID">Edit</a> |
+                    <a asp-page="../Speakers/Edit" asp-route-id="@speaker.SpeakerID" asp-route-SacramentPlanID="@Model.SacramentPlanID">Edit</a> |
                     <a asp-page="../Speakers/Details" asp-route-id="@speaker.SpeakerID">Details</a> |
                     <a asp-page="../Speakers/Delete" asp-route-id="@speaker.SpeakerID">Delete</a>
                 </td>

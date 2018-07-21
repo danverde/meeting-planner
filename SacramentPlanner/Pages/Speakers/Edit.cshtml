@@ -14,11 +14,8 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Speaker.SpeakerID" />
-            <div class="form-group">
-                <label asp-for="Speaker.SacramentPlanID" class="control-label"></label>
-                <input asp-for="Speaker.SacramentPlanID" class="form-control" />
-                <span asp-validation-for="Speaker.SacramentPlanID" class="text-danger"></span>
-            </div>
+            <input type="hidden" asp-for="Speaker.SacramentPlanID" value="@Model.SacramentPlanID"/>
+                
             <div class="form-group">
                 <label asp-for="Speaker.Name" class="control-label"></label>
                 <input asp-for="Speaker.Name" class="form-control" />
@@ -37,7 +34,7 @@
 </div>
 
 <div>
-    <a asp-page="./Index">Back to List</a>
+    <a asp-page="../SacramentPlans/Index" asp-route-id="@Model.SacramentPlanID">Back to List</a>
 </div>
 
 @section Scripts {

@@ -52,7 +52,7 @@ namespace SacramentPlanner.Pages.Speakers
                 await _context.SaveChangesAsync();
             }
 
-            return RedirectToPage("./Index");
+            return Redirect($"/SacramentPlans/Index?id={Speaker.SacramentPlanID}");
         }
     }
 }
