@@ -41,8 +41,14 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.SacramentPlan) {
-        <tr>
+@foreach (var item in Model.SacramentPlan)
+{
+    string selectedRow = "";
+    if (item.SacramentPlanID == Model.SacramentPlanID)
+    {
+        selectedRow = "success";
+    }
+        <tr class="@selectedRow">
             <td>
                 @Html.DisplayFor(modelItem => item.Date)
             </td>
@@ -68,6 +74,7 @@
                 @Html.DisplayFor(modelItem => item.Benediction)
             </td>
             <td>
+                <a asp-page="./Index" asp-route-id="@item.SacramentPlanID">Select</a> |
                 <a asp-page="./Edit" asp-route-id="@item.SacramentPlanID">Edit</a> |
                 <a asp-page="./Details" asp-route-id="@item.SacramentPlanID">Details</a> |
                 <a asp-page="./Delete" asp-route-id="@item.SacramentPlanID">Delete</a>
@@ -76,3 +83,26 @@
 }
     </tbody>
 </table>
+
+@if (Model.Speakers != null)
+{
+    <h3>Speakers</h3>
+    <table class="table">
+        <tr>
+            <th>Name</th>
+            <th>Topic</th>
+        </tr>
+        @foreach(var speaker in Model.Speakers)
+        {
+            <tr>
+                <td>
+                    @speaker.Name
+                </td>
+                <td>
+                    @speaker.Topic
+                </td>
+            </tr>
+        }
+    </table>
+
+}

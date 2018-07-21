@@ -18,11 +18,21 @@ namespace SacramentPlanner.Pages.SacramentPlans
             _context = context;
         }
 
-        public IList<SacramentPlan> SacramentPlan { get;set; }
+        public IList<SacramentPlan> SacramentPlan { get;set; } // this might have to be a IEnumerable
+        public IEnumerable<Speaker> Speakers { get; set; }
+        public int SacramentPlanID { get; set; }
 
-        public async Task OnGetAsync()
+        public async Task OnGetAsync(int? id)
         {
             SacramentPlan = await _context.SacramentPlan.ToListAsync();
+
+            if (id != null)
+            {
+                SacramentPlanID = id.Value;
+
+                Speakers = _context.Speaker.Where(x => x.SacramentPlanID == SacramentPlanID);
+                // Console.WriteLine(speakers);
+            }
         }
     }
 }
