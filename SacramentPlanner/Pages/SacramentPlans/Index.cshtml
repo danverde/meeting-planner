@@ -87,10 +87,12 @@
 @if (Model.Speakers != null)
 {
     <h3>Speakers</h3>
+    <a asp-page="../Speakers/Create" asp-route-SacramentPlanID="@Model.SacramentPlanID">Add New</a>
     <table class="table">
         <tr>
             <th>Name</th>
             <th>Topic</th>
+            <th></th>
         </tr>
         @foreach(var speaker in Model.Speakers)
         {
@@ -100,6 +102,11 @@
                 </td>
                 <td>
                     @speaker.Topic
+                </td>
+                <td>
+                    <a asp-page="../Speakers/Edit" asp-route-id="@speaker.SpeakerID">Edit</a> |
+                    <a asp-page="../Speakers/Details" asp-route-id="@speaker.SpeakerID">Details</a> |
+                    <a asp-page="../Speakers/Delete" asp-route-id="@speaker.SpeakerID">Delete</a>
                 </td>
             </tr>
         }

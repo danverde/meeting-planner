@@ -18,8 +18,11 @@ namespace SacramentPlanner.Pages.Speakers
             _context = context;
         }
 
-        public IActionResult OnGet()
+        public int SacramentPlanID { get; set; }
+
+        public IActionResult OnGet(int sacramentPlanID)
         {
+            SacramentPlanID = sacramentPlanID;
             return Page();
         }
 
@@ -36,7 +39,7 @@ namespace SacramentPlanner.Pages.Speakers
             _context.Speaker.Add(Speaker);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Index");
+            return Redirect($"/SacramentPlans/Index?id={Speaker.SacramentPlanID}");
         }
     }
 }
