@@ -11,7 +11,7 @@ namespace SacramentPlanner.Models
         public int SacramentPlanID { get; set; }
 
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:MMM dd, yyyy}", ApplyFormatInEditMode = true)]
         public DateTime Date { get; set; }
 
         [Required, StringLength(60)]

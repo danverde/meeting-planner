@@ -6,60 +6,67 @@
 }
 
 <h2>Details</h2>
-<h1 style="text-align:center">CIT 365 Ward</h1>
-<div style="margin-left:33%; ">
+<h1 style="text-align:center;font-family:Tangerine,cursive; font-weight:bold; font-size:4.5em;">Sacrament Meeting</h1>
+<div style="text-align:center;">
    
+@Html.DisplayFor(model => model.SacramentPlan.Date)
+</div>
+
+
+<div style="margin-left:34%; ">
+
     <hr />
 
     <dl class="dl-horizontal">
 
         <dt>
-            @Html.DisplayNameFor(model => model.SacramentPlan.Date)
+
         </dt>
-        
-        <dd style="padding-bottom:20px">
-            @Html.DisplayFor(model => model.SacramentPlan.Date)
+
+        <dd style="padding-bottom:30px">
+
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.SacramentPlan.Conducting)
+            @Html.DisplayNameFor(model => model.SacramentPlan.Conducting) 
         </dt>
-        <dd style="padding-bottom:20px">
+        <dd style="padding-bottom:30px">
             @Html.DisplayFor(model => model.SacramentPlan.Conducting)
         </dd>
+        <p style="margin-left:17%; padding-bottom:20px"><b>Announcements</b></p>
         <dt>
             @Html.DisplayNameFor(model => model.SacramentPlan.OpeningHymn)
         </dt>
-        <dd style="padding-bottom:20px">
+        <dd style="padding-bottom:30px">
             @Html.DisplayFor(model => model.SacramentPlan.OpeningHymn)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.SacramentPlan.Invocation)
         </dt>
-        <dd style="padding-bottom:20px">
+        <dd style="padding-bottom:30px">
             @Html.DisplayFor(model => model.SacramentPlan.Invocation)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.SacramentPlan.SacramentHymn)
         </dt>
-        <dd style="padding-bottom:20px">
+        <dd style="padding-bottom:30px">
             @Html.DisplayFor(model => model.SacramentPlan.SacramentHymn)
         </dd>
-        <p><b>Passing of the Sacrament</b></p>
-        
+        <p style="margin-left:11%; padding-bottom:20px"><b>Administration of the Sacrament</b></p>
+
         @if (Model.SacramentPlan.IntermediateHymn != null)
         {
-        <dt>
-            @Html.DisplayNameFor(model => model.SacramentPlan.IntermediateHymn)
-        </dt>
-        <dd style="padding-bottom:20px">
-            @Html.DisplayFor(model => model.SacramentPlan.IntermediateHymn)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.SacramentPlan.IntermediateHymn)
+            </dt>
+            <dd style="padding-bottom:30px">
+                @Html.DisplayFor(model => model.SacramentPlan.IntermediateHymn)
+            </dd>
         }
         <!-- Add speakers here! -->
-        @foreach(var speaker in Model.Speakers)
+        @foreach (var speaker in Model.Speakers)
         {
             <dt>Speaker</dt>
-            <dd style="padding-bottom:20px;">
+            <dd style="padding-bottom:30px;">
                 @speaker.Name
             </dd>
         }
@@ -67,7 +74,7 @@
         <dt>
             @Html.DisplayNameFor(model => model.SacramentPlan.ClosingHymn)
         </dt>
-        <dd style="padding-bottom:20px">
+        <dd style="padding-bottom:30px">
             @Html.DisplayFor(model => model.SacramentPlan.ClosingHymn)
         </dd>
         <dt>
