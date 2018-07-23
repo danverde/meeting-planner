@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html>
+<html style="height:100%;">
 <head>
     <link href="https://fonts.googleapis.com/css?family=Tangerine" rel="stylesheet">
     <meta charset="utf-8" />
@@ -17,7 +17,7 @@
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
 </head>
-<body>
+<body style="">
     <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: #05668D">
         <div class="container">
             <div class="navbar-header">
@@ -72,7 +72,7 @@
     </environment>
 
     @RenderSection("Scripts", required: false)
-    <footer style="background-color:#00A896; position:absolute; width:100%; height:40px;padding-bottom:20px;padding-right:20px;padding-left:20px;padding-top:1px;">
+    <footer style="background-color:#00A896; position:fixed; left:0; bottom:0;width:100%; height:40px;padding-bottom:20px;padding-right:20px;padding-left:20px;padding-top:1px;">
         <p style="color:#F0F3BD; text-align:center; margin-top:9px;">&copy; 2018 - SacramentPlanner</p>
     </footer>
 </body>
